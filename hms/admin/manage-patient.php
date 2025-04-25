@@ -83,9 +83,11 @@ if (strlen($_SESSION['id']) == 0) {
                                     <tbody>
 <?php
 // Modify SQL query to include search functionality
-$sql = "SELECT * FROM tblpatient";
+$sql = "SELECT *, CONCAT(PatientLastname, ' ', PatientFirstname, ' ', PatientMiddlename) AS FullName FROM tblpatient";
 if ($search != '') {
-    $sql .= " WHERE PatientName LIKE '%$search%' OR PatientContno LIKE '%$search%' OR LOWER(PatientGender) = LOWER('$search')";
+    $sql .= " WHERE CONCAT(PatientLastname, ' ', PatientFirstname, ' ', PatientMiddlename) LIKE '%$search%' 
+              OR PatientContno LIKE '%$search%' 
+              OR LOWER(PatientGender) = LOWER('$search')";
 }
 $result = mysqli_query($con, $sql);
 $cnt = 1;
@@ -93,11 +95,11 @@ while ($row = mysqli_fetch_array($result)) {
 ?>
                                         <tr>
                                             <td class="center"><?php echo $cnt;?>.</td>
-                                            <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
-                                            <td><?php echo $row['PatientContno'];?></td>
-                                            <td><?php echo $row['PatientGender'];?></td>
-                                            <td><?php echo $row['CreationDate'];?></td>
-                                            <td><?php echo $row['UpdationDate'];?></td>
+                                            <td class="hidden-xs"><?php echo htmlentities($row['FullName']);?></td>
+                                            <td><?php echo htmlentities($row['PatientContno']);?></td>
+                                            <td><?php echo htmlentities($row['PatientGender']);?></td>
+                                            <td><?php echo htmlentities($row['CreationDate']);?></td>
+                                            <td><?php echo htmlentities($row['UpdationDate']);?></td>
                                             <td>
                                                 <a href="view-patient.php?viewid=<?php echo $row['ID'];?>" class="btn btn-primary btn-xs" target="_blank">View</a>
                                             </td>
