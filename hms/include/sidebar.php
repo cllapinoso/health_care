@@ -51,20 +51,57 @@
 									</div>
 								</a>
 							</li>
-<li>
-								<a href="manage-medhistory.php">
+
+							<li>
+									<a href="javascript:void(0)">
 									<div class="item-content">
 										<div class="item-media">
-									
+		
 										</div>
 										<div class="item-inner">
-											<span class="title"><center>
-												<strong><em><span style="color: #FFFFFF">MEDICAL HISTORY</span></em></strong>
-										  </center></span>
-										</div>
+										<span class="title">
+											<span style="color: #FFFFFF"><center> <em><strong>PATIENT RECORDS</center></strong></em></span>									    <strong></strong></div>
 									</div>
 								</a>
-							</li>
+								<ul class="sub-menu">
+									
+									<li>
+										<em><a href="dental_records.php">
+											<span class="title">
+												<span style="color: #FFFFFF">Dental</span>
+										</a>
+									    </em></li>
+
+									<li>
+										<em><a href="family_planning_records.php">
+											<span class="title">
+												<span style="color: #FFFFFF">Family Planning</span>
+										</a>
+									    </em></li>
+
+									<li>
+										<em><a href="hiv_records.php">
+											<span class="title">
+												<span style="color: #FFFFFF">HIV Test</span>
+										</a>
+									    </em></li>
+
+									<li>
+										<em><a href="medical_checkup_records.php">
+											<span class="title">
+												<span style="color: #FFFFFF">Medical Checkup</span>
+										</a>
+									    </em></li>
+
+									<li>
+										<em><a href="prenatal_records.php">
+											<span class="title">
+												<span style="color: #FFFFFF">Prenatal</span>
+										</a>
+									    </em></li>
+									
+								</ul>
+								</li>
 
 						</ul>
 					
