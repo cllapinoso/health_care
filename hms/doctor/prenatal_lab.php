@@ -196,7 +196,7 @@ mysqli_close($con);
 
             <h2>Patient Information</h2>
             <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" required>
+            <input type="text" id="fullName" placeholder="Lastname, Firstname Middlename" name="fullName" required>
 
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required>

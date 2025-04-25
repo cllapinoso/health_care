@@ -68,7 +68,7 @@ return true;
 							  Put your information below
 					  </p>
 							<div class="form-group">
-								<input type="text" class="form-control" name="full_name" placeholder="Full Name" required>
+								<input type="text" class="form-control" name="full_name" placeholder="Full Name (Lastname, Firstname Middlename)" required>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" name="address" placeholder="Address" required>

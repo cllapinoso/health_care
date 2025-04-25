@@ -263,7 +263,7 @@ mysqli_close($con);
 
             <h2>Patient Information</h2>
             <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" value="<?php echo htmlentities($data['fullName']); ?>" required>
+            <input type="text" id="fullName" name="fullName" placeholder="Lastname, Firstname Middlename" value="<?php echo htmlentities($data['fullName']); ?>" required>
 
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" value="<?php echo htmlentities($data['dob']); ?>" required>

@@ -77,7 +77,7 @@ if (strlen($_SESSION['id']) == 0) {
                                 <!-- Search Form -->
                                 <form method="GET" action="" class="mb-3">
                                     <div class="form-group">
-                                        <input type="text" id="searchInput" name="search" class="form-control" placeholder="Search by Patient Name, Specialization, Appointment Date, Status, or Ref" value="<?php echo htmlentities($search); ?>" />
+                                        <input type="text" id="searchInput" name="search" class="form-control" placeholder="Search by ID, Name, Specialization, Appointment Date, Status, or Ref" value="<?php echo htmlentities($search); ?>" />
                                     </div>
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </form>
@@ -85,8 +85,8 @@ if (strlen($_SESSION['id']) == 0) {
                                 <table class="table table-hover" id="sample-table-1">
                                     <thead>
                                         <tr>
-                                            <th class="center">No.</th>
-                                            <th class="hidden-xs">Patient Name</th>
+                                            <th class="center">User ID</th>
+                                            <th class="hidden-xs">Name</th>
                                             <th>Specialization</th>
                                             <th>Reference ID</th>
                                             <th>Appointment Date / Time</th>
@@ -106,6 +106,7 @@ $sql = "SELECT users.fullName AS fname, appointment.*
 
 if (!empty($search)) { // Check if search is not empty
     $sql .= " AND (users.fullName LIKE '%$search%' 
+              OR appointment.userId LIKE '%$search%' 
               OR appointment.doctorSpecialization LIKE '%$search%' 
               OR appointment.appointmentDate LIKE '%$search%' 
               OR appointment.ref LIKE '%$search%'  /* Search by ref */
@@ -125,7 +126,7 @@ $cnt = 1;
 while ($row = mysqli_fetch_array($result)) {
 ?>
                                         <tr>
-                                            <td class="center"><?php echo $cnt;?>.</td>
+                                            <td class="center"><?php echo $row['userId'];?></td>
                                             <td class="hidden-xs"><?php echo $row['fname'];?></td>
                                             <td><?php echo $row['doctorSpecialization'];?></td>
                                             <td><?php echo $row['ref']; ?></td> <!-- Displaying Ref -->
